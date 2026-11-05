@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shippori+Antique&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="./images/favicon.png" />
+    <title>TaskManager</title>
+
+    <link rel="stylesheet" href="css/info.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/js.css" />
+    <link rel="stylesheet" href="css/queries.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="logo">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="tick"
+          >
+            <path d="M20 6 9 17l-5-5" />
+          </svg>
+
+          <h2>TaskManager</h2>
+        </div>
+
+        <nav class="sidebar-value">
+          <a href="#all-tasks" class="all-tasks-link">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-house preview-icon"
+            >
+              <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+              <path
+                d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+              />
+            </svg>
+            <span> All Tasks</span>
+          </a>
+
+          <a href="#today" class="today-link">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-calendar-range preview-icon"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M16 2v3" />
+              <path d="M3 9h18" />
+              <path d="M8 2v3" />
+              <path d="M17 13h-6" />
+              <path d="M13 17H7" />
+              <path d="M7 13h.01" />
+              <path d="M17 17h.01" />
+            </svg>
+            <span>Today</span>
+          </a>
+
+          <a href="#completed" class="completed-link">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-check-line preview-icon"
+            >
+              <path d="M20 4L9 15" />
+              <path d="M21 19L3 19" />
+              <path d="M9 15L4 10" />
+            </svg>
+            <span>Completed</span>
+          </a>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <div class="first-line">
+          <nav class="first-line-icon">
+            <button
+              class="sidebar-toggle"
+              type="button"
+              aria-label="Toggle sidebar"
+              aria-expanded="true"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect width="18" height="18" x="3" y="3" rx="2" />
+                <path d="M9 3v18" />
+              </svg>
+            </button>
+            <button class="theme-toggle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="theme"
+              >
+                <path d="M12 2v2" />
+                <path
+                  d="M14.837 16.385a6 6 0 1 1-7.223-7.222c.624-.147.97.66.715 1.248a4 4 0 0 0 5.26 5.259c.589-.255 1.396.09 1.248.715"
+                />
+                <path d="M16 12a4 4 0 0 0-4-4" />
+                <path d="m19 5-1.256 1.256" />
+                <path d="M20 12h2" />
+              </svg>
+            </button>
+          </nav>
+
+          <nav class="time-box">
+            <!--<svg
+              class="timer"
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="10" x2="14" y1="2" y2="2" />
+              <line x1="12" x2="15" y1="14" y2="11" />
+              <circle cx="12" cy="14" r="8" />
+            </svg>-->
+
+            <p>Timer:</p>
+            <div class="timer-display">00:00:00</div>
+            <button class="start-timer">Start</button>
+            <button class="reset-timer">Reset</button>
+            <button class="report-btn" type="button">Report</button>
+          </nav>
+        </div>
+
+        <header class="page-header">
+          <div class="header-text">
+            <h1>My Task Board...</h1>
+            <p>Stay focused, get things done!</p>
+          </div>
+
+          <form class="task-form">
+            <input
+              class="task-input"
+              type="text"
+              placeholder="Add a new task..."
+              aria-label="Task title"
+              required
+            />
+
+            <input
+              type="date"
+              class="task-date"
+              aria-label="Task due date"
+              required
+            />
+            <button class="add-task" type="submit">+ Add Task</button>
+          </form>
+        </header>
+
+        <div class="board">
+          <section class="task-column todo-column">
+            <div class="column-header">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                class="circle-icon"
+              >
+                <circle cx="12" cy="12" r="10" />
+              </svg>
+              <h2 class="title todo-title">To Do</h2>
+            </div>
+
+            <ul class="task-list"></ul>
+          </section>
+
+          <section class="task-column progress-column">
+            <div class="column-header">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                class="circle-icon"
+              >
+                <circle cx="12" cy="12" r="10" />
+              </svg>
+              <h2 class="title progress-title">In Progress</h2>
+            </div>
+
+            <ul class="task-list"></ul>
+          </section>
+
+          <section class="task-column done-column">
+            <div class="column-header">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                class="circle-icon"
+              >
+                <circle cx="12" cy="12" r="10" />
+              </svg>
+              <h2 class="title done-title">Done</h2>
+            </div>
+
+            <ul class="task-list"></ul>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!---------------- Modal ----------------->
+    <div class="task-modal-overlay">
+      <div class="task-modal">
+        <div class="modal-header">
+          <h2>Task Details</h2>
+
+          <button class="close-modal" type="button">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          <div class="modal-task-title">
+            <label>Task Title</label>
+            <input type="text" class="edit-task-title" />
+          </div>
+
+          <div class="modal-description">
+            <label>Description</label>
+            <textarea
+              class="edit-task-description"
+              placeholder="Add a description..."
+            ></textarea>
+          </div>
+
+          <div class="modal-subtasks">
+            <h3>Subtasks</h3>
+
+            <div class="subtask-list"></div>
+
+            <div class="add-subtask-form">
+              <input
+                type="text"
+                class="subtask-input"
+                placeholder="Add a step..."
+              />
+
+              <button class="add-subtask-btn" type="button">+ Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="save-task-btn" type="button">Save Changes</button>
+        </div>
+      </div>
+    </div>
+
+    <!------------- Weekly Report Modal -------------->
+    <div class="report-modal-overlay">
+      <div class="report-modal">
+        <div class="report-modal-header">
+          <h2>Weekly Focus Report</h2>
+          <button class="close-report-modal" type="button">&times;</button>
+        </div>
+
+        <div class="report-modal-body">
+          <p class="weekly-total">
+            Total Focus Time: <span class="weekly-total-time">00:00:00</span>
+          </p>
+
+          <ul class="daily-report-list"></ul>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="js/script.js"></script>
+  </body>
+</html>

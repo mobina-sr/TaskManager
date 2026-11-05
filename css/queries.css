@@ -1,0 +1,239 @@
+@media (max-width: 1200px) {
+  .app {
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+
+  .main-content {
+    padding: 24px;
+    min-width: 0;
+  }
+
+  .logo h2 {
+    font-size: 22px;
+  }
+
+  .tick {
+    width: 20px;
+    height: 20px;
+  }
+
+  .board {
+    gap: 16px;
+    grid-template-columns: 1fr;
+  }
+
+  .page-header {
+    gap: 16px;
+  }
+}
+
+@media (min-width: 981px) {
+  .app.sidebar-collapsed {
+    grid-template-columns: 0 minmax(0, 1fr);
+  }
+
+  .app.sidebar-collapsed .sidebar {
+    padding-inline: 0;
+    box-shadow: none;
+    visibility: hidden;
+    transition:
+      padding 0.3s ease,
+      visibility 0s 0.3s;
+  }
+}
+
+@media (max-width: 980px) {
+  .board {
+    grid-template-columns: 1fr;
+  }
+
+  .task-form {
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+  }
+
+  .add-task {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .task-date {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 0 12px;
+    padding: 0 16px;
+    border-radius: 16px;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      max-height 0.3s ease,
+      margin 0.3s ease,
+      padding 0.3s ease,
+      opacity 0.3s ease,
+      visibility 0s 0.3s;
+  }
+
+  .app.sidebar-open .sidebar {
+    margin: 12px 12px 0;
+    padding: 12px 16px;
+    max-height: 200px;
+    opacity: 1;
+    visibility: visible;
+    transition:
+      max-height 0.3s ease,
+      margin 0.3s ease,
+      padding 0.3s ease,
+      opacity 0.3s ease,
+      visibility 0s;
+  }
+
+  .sidebar .logo {
+    margin: 0;
+  }
+
+  .sidebar-value {
+    grid-auto-flow: column;
+    gap: 8px;
+  }
+
+  .sidebar-value a {
+    padding: 8px 12px;
+  }
+
+  .main-content {
+    margin: 12px;
+  }
+
+  .page-header {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 780px) {
+  .page-header {
+    grid-template-columns: 1fr;
+  }
+
+  .task-column {
+    padding: 12px;
+  }
+
+  .task-list li {
+    font-size: 16px;
+  }
+
+  .task-form button {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: auto;
+    height: 29px;
+  }
+
+  .task-input,
+  .task-date,
+  .add-task {
+    height: 30px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 700px) {
+  .app.sidebar-open .sidebar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .sidebar .logo {
+    justify-content: center;
+  }
+
+  .sidebar-value {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+
+  .sidebar-value a {
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    padding: 8px 4px;
+    font-size: 13px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .task-list li {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-text h1 {
+    font-size: 26px;
+  }
+
+  .header-text p {
+    font-size: 12px;
+  }
+
+  .first-line {
+    zoom: 0.8;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    margin: 4px;
+  }
+
+  .sidebar {
+    zoom: 0.7;
+  }
+
+  .first-line {
+    zoom: 0.6;
+  }
+
+  .task-column {
+    zoom: 0.9;
+  }
+
+  .task-modal-overlay,
+  .report-modal-overlay {
+    zoom: 0.8;
+  }
+}
+
+@media (max-width: 410px) {
+  .main-content {
+    padding: 16px;
+  }
+
+  .task-input {
+    padding: 10px;
+  }
+
+  .add-task {
+    min-width: 85px;
+    padding: 10px 8px;
+    white-space: nowrap;
+  }
+}

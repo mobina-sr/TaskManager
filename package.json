@@ -1,0 +1,16 @@
+{
+  "name": "taskmanager",
+  "version": "1.0.0",
+  "description": "A simple Task Manager built with HTML, CSS, and JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server ."
+  },
+  "keywords": [],
+  "author": "Mobina",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

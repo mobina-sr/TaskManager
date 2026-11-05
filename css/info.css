@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #8267f3;
+  --primary-dark: #8970f4;
+
+  --text-light: #f5f3ff;
+  --text-dark: #252338;
+  --text-muted: #77758a;
+  --text-h1: #30245b;
+
+  --border: #e0dce8;
+  --bg: #fbfbfd;
+  --surface: #ffffff;
+
+  --todo: var(--primary);
+  --todo-bg: #f0edfe;
+
+  --progress: #f59e0b;
+  --progress-bg: #fef5e7;
+
+  --done: #22a06b;
+  --done-bg: #e9f6f0;
+
+  --main-border: #dce4eb;
+  --content-border: #e5e7eb;
+  --surface-white: #ffffff;
+
+  --timer-text: #4e3e92;
+
+  --hover-bg: #e4e1f1;
+  --danger: #e5484d;
+  --danger-bg: #fdebed;
+  --danger-hover: #49282f;
+
+  --modal-overlay: rgba(21, 13, 40, 0.55);
+  --modal-shadow: 0 15px 50px rgba(21, 13, 40, 0.2);
+
+  --focus-shadow: 0 0 0 3px rgba(108, 76, 241, 0.12);
+
+  --shadow: 0 0 6px 0.25px rgba(0, 0, 0, 0.2);
+}
+
+/*---------------- DARK MODE ----------------*/
+
+body.dark-mode {
+  --primary: #8b83b8;
+  --primary-dark: #716995;
+
+  --text-light: #f0eff5;
+  --text-dark: #f0eff5;
+  --text-muted: #a09dad;
+  --text-h1: #f0edf8;
+
+  --border: #45434f;
+  --bg: #25252d;
+  --surface: #303039;
+
+  --todo: #a49bcb;
+  --todo-bg: #403e50;
+
+  --progress: #d3a66f;
+  --progress-bg: #443a32;
+
+  --done: #7fae99;
+  --done-bg: #303f3a;
+
+  --main-border: #41404b;
+  --content-border: #4a4854;
+  --surface-white: #35343e;
+
+  --timer-text: #b8aedf;
+
+  --hover-bg: #41404d;
+  --danger: #d98289;
+  --danger-bg: #493438;
+  --danger-hover: #eaa0a5;
+
+  --modal-overlay: rgba(12, 11, 17, 0.72);
+  --modal-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+
+  --focus-shadow: 0 0 0 3px rgba(164, 155, 203, 0.22);
+
+  --shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+}
+
+body {
+  font-family: "Shippori Antique", sans-serif;
+  line-height: 1;
+  background-color: var(--bg);
+}
+
+button,
+input,
+.task-input,
+.task-date {
+  font-family: inherit;
+}
+
+body,
+.sidebar,
+.main-content,
+.task-column,
+.task-list li,
+button,
+input,
+.task-modal {
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}

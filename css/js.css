@@ -1,0 +1,205 @@
+/*-------------------buttons------------------*/
+
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.progress-btn,
+.done-btn,
+.delete-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 6px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.progress-btn {
+  color: var(--progress);
+}
+
+.progress-btn:hover {
+  background-color: var(--progress-bg);
+}
+
+.done-btn {
+  color: var(--done);
+}
+
+.done-btn:hover {
+  background-color: var(--done-bg);
+}
+
+.completed {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.delete-btn {
+  color: var(--danger);
+}
+
+.delete-btn:hover {
+  background-color: var(--danger-bg);
+}
+
+/*------------------sidebar(completed)------------------*/
+
+.board.completed-view {
+  grid-template-columns: 1fr;
+}
+
+.board.completed-view .todo-column,
+.board.completed-view .progress-column {
+  display: none;
+}
+
+/*-------------------sidebar (all tasks)------------------*/
+
+.board.all-tasks-view {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/*-------------------sidebar (today)-------------------*/
+
+.task-due-date {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.not-today {
+  display: none !important;
+}
+
+.task-info {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+/*-------------------dragging-------------------*/
+
+.task-list li {
+  cursor: grab;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.task-list li.dragging {
+  opacity: 0.4;
+  transform: scale(0.96);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.task-column {
+  transition:
+    transform 0.2s ease,
+    outline-color 0.2s ease;
+}
+
+.task-column.drag-over {
+  outline-color: var(--accent);
+  transform: scale(1.01);
+}
+/*-----------------report----------------*/
+
+.report-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: var(--modal-overlay);
+  backdrop-filter: blur(5px);
+}
+
+.report-modal-overlay.show {
+  display: flex;
+}
+
+.report-modal {
+  width: min(480px, 100%);
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 28px;
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--modal-shadow);
+}
+
+.report-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.report-modal-header h2 {
+  color: var(--text-h1);
+  font-size: 21px;
+}
+
+.close-report-modal {
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 8px;
+  background: var(--hover-bg);
+  color: var(--text-muted);
+  font-size: 24px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.close-report-modal:hover {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.weekly-total {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  margin-bottom: 22px;
+  border-radius: 12px;
+  background: var(--todo-bg);
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.weekly-total-time {
+  color: var(--timer-text);
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.daily-report-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.daily-report-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text-dark);
+  font-size: 14px;
+}

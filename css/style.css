@@ -1,0 +1,461 @@
+/*----------------BODY-----------------*/
+
+.app {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  min-height: 100vh;
+  border: 1px solid var(--main-border);
+  transition: grid-template-columns 0.3s ease;
+}
+
+.main-content {
+  min-width: 0;
+  padding: 32px;
+  margin: 16px;
+  border: 1px solid var(--content-border);
+  border-radius: 20px;
+  background-color: var(--surface-white);
+  box-shadow: 0 4px 12px rgba(45, 55, 70, 0.06);
+}
+
+/*-----------------SIDEBAR----------------*/
+
+.sidebar {
+  background-color: var(--primary);
+  color: var(--text-light);
+  padding: 24px;
+  box-shadow: var(--focus-shadow);
+  overflow: hidden;
+  white-space: nowrap;
+  transition: width 0.3s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 24px 0 40px;
+}
+
+.logo h2 {
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.tick {
+  background-color: var(--text-light);
+  color: var(--primary);
+  border-radius: 5px;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.sidebar-value {
+  display: grid;
+  gap: 24px;
+}
+
+.sidebar-value a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  color: var(--text-light);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.sidebar-value a:hover {
+  background-color: var(--primary-dark);
+}
+
+/*-----------------SIDEBAR TOGGLE----------------*/
+
+.sidebar-toggle,
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  background-color: var(--surface-white);
+  color: var(--primary);
+}
+
+.sidebar-toggle:hover,
+.theme-toggle:hover {
+  background-color: var(--todo-bg);
+}
+
+.sidebar-toggle:focus-visible,
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/*-----------------TIMER----------------*/
+
+.first-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.first-line-icon {
+  display: flex;
+}
+
+.time-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 16px;
+}
+
+.time-box p {
+  color: var(--primary-dark);
+  font-size: 16px;
+}
+
+.timer-display {
+  font-size: 16px;
+  color: var(--timer-text);
+}
+
+.start-timer,
+.reset-timer,
+.report-btn {
+  font-size: 12px;
+  padding: 4px 12px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: inherit;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.start-timer,
+.report-btn,
+.reset-timer {
+  border: 1px solid var(--border);
+  color: var(--primary-dark);
+}
+
+.start-timer:hover,
+.reset-timer:hover,
+.report-btn:hover {
+  background-color: var(--hover-bg);
+  transform: translateY(-1px);
+}
+
+/*-----------------HEADER----------------*/
+
+.page-header {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  align-items: center;
+  gap: 24px;
+  margin: 24px 0 32px 0;
+}
+
+.page-header h1 {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  color: var(--text-h1);
+}
+
+.page-header p {
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+.task-form {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 14px;
+}
+
+.task-input,
+.task-date {
+  width: 100%;
+  min-width: 0;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  font-size: 16px;
+}
+
+.task-input:focus,
+.task-date:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: var(--focus-shadow);
+}
+
+.add-task {
+  background-color: var(--primary);
+  color: var(--text-light);
+  padding: 10px 16px;
+  border: none;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.add-task:hover {
+  background-color: var(--primary-dark);
+}
+
+.add-task:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/*-----------------TASK BOARD----------------*/
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.todo-column {
+  --accent: var(--todo);
+  --accent-bg: var(--todo-bg);
+}
+
+.progress-column {
+  --accent: var(--progress);
+  --accent-bg: var(--progress-bg);
+}
+
+.done-column {
+  --accent: var(--done);
+  --accent-bg: var(--done-bg);
+}
+
+.task-column {
+  margin-top: 16px;
+  background-color: var(--accent-bg);
+  padding: 16px;
+  border-radius: 16px;
+  height: 450px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.column-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: var(--accent);
+  text-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.circle-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.task-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  max-height: 380px;
+  overflow-y: auto;
+}
+
+.task-list li:hover {
+  box-shadow: var(--shadow);
+}
+
+.task-list li {
+  background-color: var(--surface);
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent);
+  color: var(--text-dark);
+  font-size: 14px;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+/*-----------------MODAL----------------*/
+
+.task-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--modal-overlay);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.task-modal {
+  width: 100%;
+  max-width: 550px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: var(--modal-shadow);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.modal-header h2 {
+  color: var(--text-h1);
+  font-size: 22px;
+}
+
+.close-modal {
+  border: none;
+  background: var(--todo-bg);
+  color: var(--primary);
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  background: var(--primary);
+  color: var(--surface-white);
+}
+
+.modal-body label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-h1);
+  font-weight: 600;
+}
+
+.modal-task-title,
+.modal-description {
+  margin-bottom: 22px;
+}
+
+.edit-task-title,
+.edit-task-description,
+.subtask-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+  outline: none;
+}
+
+.edit-task-title:focus,
+.edit-task-description:focus,
+.subtask-input:focus {
+  border-color: var(--primary);
+  box-shadow: var(--focus-shadow);
+}
+
+.edit-task-description {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.modal-subtasks {
+  background: var(--todo-bg);
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.modal-subtasks h3 {
+  color: var(--text-h1);
+  margin-bottom: 15px;
+}
+
+.add-subtask-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.subtask-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+  color: var(--text-dark);
+}
+
+.subtask-item input {
+  accent-color: var(--primary);
+}
+
+.subtask-item span {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.add-subtask-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  background: var(--primary);
+  color: var(--surface-white);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.add-subtask-btn:hover,
+.save-task-btn:hover {
+  background: var(--primary-dark);
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.save-task-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 9px;
+  padding: 12px 22px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
