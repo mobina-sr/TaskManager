@@ -214,6 +214,7 @@
 
   .task-column {
     zoom: 0.9;
+    height: 350px;
   }
 
   .task-modal-overlay,
