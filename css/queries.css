@@ -63,7 +63,9 @@
   }
 
   .app {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    align-content: start;
   }
 
   .sidebar {
@@ -206,6 +208,7 @@
 
   .sidebar {
     zoom: 0.8;
+    align-self: start;
   }
 
   .first-line {
@@ -215,6 +218,11 @@
   .task-column {
     zoom: 0.9;
     height: 350px;
+  }
+
+  .task-list {
+    max-height: 290px;
+    overflow-y: auto;
   }
 
   .task-modal-overlay,
