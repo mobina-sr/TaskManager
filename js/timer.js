@@ -152,11 +152,44 @@ const displayTimer = function () {
 
 const updateStartButton = function () {
   if (startedAt) {
-    startTimerBtn.textContent = "Pause";
+    // Pause
+    startTimerBtn.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg"
+        width="20" height="20" viewBox="0 0 24 24"
+        fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <rect x="14" y="3" width="5" height="18" rx="1"/>
+        <rect x="5" y="3" width="5" height="18" rx="1"/>
+      </svg>
+    `;
+    startTimerBtn.setAttribute("aria-label", "Pause");
   } else if (getElapsedMs() > 0) {
-    startTimerBtn.textContent = "Resume";
+    // Resume
+    startTimerBtn.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg"
+        width="20" height="20" viewBox="0 0 24 24"
+        fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2a10 10 0 0 1 7.38 16.75"/>
+        <path d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z"/>
+        <path d="M2.5 8.875a10 10 0 0 0-.5 3"/>
+        <path d="M2.83 16a10 10 0 0 0 2.43 3.4"/>
+        <path d="M4.636 5.235a10 10 0 0 1 .891-.857"/>
+        <path d="M8.644 21.42a10 10 0 0 0 7.631-.38"/>
+      </svg>
+    `;
+    startTimerBtn.setAttribute("aria-label", "Resume");
   } else {
-    startTimerBtn.textContent = "Start";
+    // Start
+    startTimerBtn.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg"
+        width="20" height="20" viewBox="0 0 24 24"
+        fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/>
+      </svg>
+    `;
+    startTimerBtn.setAttribute("aria-label", "Start");
   }
 };
 

@@ -14,21 +14,24 @@
   --text-h1: #30245b;
 
   --border: #e0dce8;
-  --bg: #fbfbfd;
+  --bg: #eeeef0;
   --surface: #ffffff;
 
-  --todo: var(--primary);
-  --todo-bg: #f0edfe;
+  --todo: #6f62e8;
+  --todo-bg: #eeedfb;
+  --todo-border: #d0cbee;
 
-  --progress: #f59e0b;
-  --progress-bg: #fef5e7;
+  --progress: #d98206;
+  --progress-bg: #f6efeb;
+  --progress-border: #e3d1c5;
 
-  --done: #22a06b;
-  --done-bg: #e9f6f0;
+  --done: #17a06b;
+  --done-bg: #e8f1f2;
+  --done-border: #c0d6d7;
 
   --main-border: #dce4eb;
   --content-border: #e5e7eb;
-  --surface-white: #ffffff;
+  --surface-white: #fafafb;
 
   --timer-text: #4e3e92;
 
@@ -42,7 +45,7 @@
 
   --focus-shadow: 0 0 0 3px rgba(108, 76, 241, 0.12);
 
-  --shadow: 0 0 6px 0.25px rgba(0, 0, 0, 0.2);
+  --shadow: 0 1px 2px rgba(26, 22, 48, 0.06), 0 4px 14px rgba(26, 22, 48, 0.05);
 }
 
 /*---------------- DARK MODE ----------------*/
@@ -62,12 +65,15 @@ body.dark-mode {
 
   --todo: #a49bcb;
   --todo-bg: #403e50;
+  --todo-border: #3d3669;
 
   --progress: #d3a66f;
   --progress-bg: #443a32;
+  --progress-border: #4e3b44;
 
   --done: #7fae99;
   --done-bg: #303f3a;
+  --done-border: #2d4355;
 
   --main-border: #41404b;
   --content-border: #4a4854;
@@ -89,7 +95,7 @@ body.dark-mode {
 }
 
 body {
-  font-family: "Shippori Antique", sans-serif;
+  font-family: "Bricolage Grotesque", "Shippori Antique", sans-serif;
   line-height: 1;
   background-color: var(--bg);
 }

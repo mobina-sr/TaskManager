@@ -3,9 +3,11 @@ import { addTask, restoreTasks } from "./task.js";
 import "./sidebar.js";
 import "./modal.js";
 import { initTimer } from "./timer.js";
+import { initTaskProgress } from "./progress.js";
 
 restoreTasks();
 initTimer();
+initTaskProgress();
 
 // ----------------------------------------------------------
 // form
